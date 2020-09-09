@@ -14,7 +14,7 @@ app.listen(8081);
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
-const db_url = 'mongodb://localhost:27017/week6db';
+const db_url = 'mongodb://localhost:27017/week6Librarydb';
 
 mongoose.connect(db_url,function(err){
     if (err)console.log(err);
