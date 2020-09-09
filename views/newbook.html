@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+<body>
+    <h3>
+        <a href="/">
+            <button>Home</button>
+        </a>
+        <a href="/booklist">
+            <button>Book List</button>
+        </a>
+        <a href="/authorlist">
+            <button>Author List</button>
+        </a>
+        <a href="/newauthor">
+            <button>Add Author</button>
+        </a>
+        <a href="/deletebook">
+            <button>Delete book by isbn</button>
+        </a>
+        <a href="/updateauthorbooknum">
+            <button>Update author book number</button>
+        </a>
+    </h3>
+    <h1>Enter new Book:</h1>
+    <form action="addbook" method="POST">
+      Book Title <input type="text" name="title"  /> <br />
+      Author ID <input type="text" name="authorid" required/> <br />
+      ISBN <input type="number" name="isbn" required/><br />
+      Date of publication <input type="date" name="publicationdate" /><br />
+      Summary <input type="text" name="summary" /> <br />
+      <button>Submit</button>
+    </form>
+
+</body>
+
+
+</html>

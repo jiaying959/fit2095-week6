@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+<body>
+    <h3>
+        <a href="/">
+            <button>Home</button>
+        </a>
+        <a href="/newbook">
+            <button>Add Book</button>
+        </a>
+        <a href="/authorlist">
+            <button>Author List</button>
+        </a>
+        <a href="/newauthor">
+            <button>Add Author</button>
+        </a>
+        <a href="/deletebook">
+            <button>Delete book by isbn</button>
+        </a>
+        <a href="/updateauthorbooknum">
+            <button>Update author book number</button>
+        </a>
+    </h3>
+    <table id="t01">
+        <tr>
+            <th>
+                Book title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                ISBN
+            </th>
+            <th>
+                Date of publication 
+            </th>
+            <th>
+                Summary 
+            </th>
+        </tr>
+        <% for(let i=0;i<books.length;i++){ %>
+        <tr>
+            <td>
+                <%= books[i].title %>
+            </td>
+            <td>
+                <%= books[i].author.name.firstName %><%= books[i].author.name.lastName %>
+            </td>
+            <td>
+                <%= books[i].isbn %>
+            </td>
+            <td>
+                <%= books[i].date %>
+            </td>
+            <td>
+                <%= books[i].summary %>
+            </td>
+        </tr>
+        <%} %>
+    </table>
+</body>
+
+</html>
