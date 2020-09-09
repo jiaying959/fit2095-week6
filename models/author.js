@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-
+let moment = require('moment');
 let authorSchema = mongoose.Schema({
     _id:mongoose.Types.ObjectId,
     name: {
@@ -9,7 +9,12 @@ let authorSchema = mongoose.Schema({
         },
         lastName: String
     },
-    dob:Date,
+    dob:{
+        type:Date,
+        get: function(newDate){
+            return moment(newDate).format('DD-MM-YYYY');
+        }
+    },
     address: {
         state:{
             type: String,
