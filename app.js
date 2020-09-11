@@ -5,6 +5,7 @@ let Author = require('./models/author.js')
 //configure express/bodyparser/ejs and connect to server
 let express = require('express');
 let bodyparser = require('body-parser');
+const { response } = require('express');
 let app = express();
 let viewpath = __dirname+'/views/';
 app.use(bodyparser.urlencoded({extended:false}));
@@ -132,7 +133,19 @@ app.post('/updateauthordata', function (req, res) {
     res.redirect('/authorlist');// redirect the client to list users page
     
 })
+//return all the authors with number of books less than the number sent as a query parameter
+app.get('/authorBook',(req,res)=>{
+    let booknum=parseInt(req.query.n);
+    Author.where('numberBook').lt(booknum).exec(function(err,docs){
+        res.send(docs+'<br/>'+'thanks!');
+        res.end('thanks');
+    
+    });
 
+});
 app.get(/.*/,(req,res)=>{
     res.send('error page');
 });
+
+
+
